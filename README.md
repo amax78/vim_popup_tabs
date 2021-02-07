@@ -2,5 +2,9 @@
 
 This module adds switching between tabs and buffers to vim using popup dialog menu
 
-![Alt text](docs/popup_tabs.jpg)<br>
-![Alt text](docs/popup_buffer.jpg)<br>
+<br>
+Tabs popup menu<br>
+![](docs/popup_tabs.jpg){:height="25%"}<br>
+<br>
+Buffers popup menu<br>
+![](docs/popup_buffer.jpg){:height="25%"}<br>
