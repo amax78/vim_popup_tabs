@@ -8,3 +8,6 @@ Tabs popup menu<br>
 <br>
 Buffers popup menu<br>
 <img src="docs/popup_buffers.jpg" height="320px"><br>
+
+Bugs:
+ - Fill buffer name only when open vim to file edit
