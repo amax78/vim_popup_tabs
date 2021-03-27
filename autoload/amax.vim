@@ -216,7 +216,7 @@ func! amax#buf_select(id, result)
         return
     endif
 
-    let i = index(keys(s:buffers), keys(t:bufs)[string(a:result - 1]))
+    let i = index(keys(s:buffers), keys(t:bufs)[a:result - 1])
     
     if -1 == i
        echo "Buffer not found!
@@ -239,14 +239,14 @@ func! amax#hotkey_save(id, result)
 endfunc
 
 func! amax#tab_enter()
-    echomsg "tab ent"
+"    echomsg "tab ent"
     let s:otab_id = tabpagenr() " opened tab id
 
     echomsg "Tab enter " . s:otab_id
 endfunc
 
 func! amax#tab_close()
-    echomsg "Tab close"
+"    echomsg "Tab close"
 
 
     if -1 == index(keys(s:tabs), string(s:otab_id))
@@ -259,11 +259,11 @@ func! amax#tab_close()
 endfunc
 
 func! amax#tab_leave()
-    echomsg "Tab leave "
+"    echomsg "Tab leave "
 endfunc
 
 func! amax#tab_new()
-    echomsg "Tab new ".tabpagenr()
+"    echomsg "Tab new ".tabpagenr()
 
     :call extend(s:tabs, { tabpagenr() : [ 'No name' ] })
 endfunc
