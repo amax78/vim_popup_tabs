@@ -136,11 +136,11 @@ endfunc
 func! amax#buf_switch(tab_id, buf_id)
 "    echomsg "buf_switch ".a:buf_id
 
-    if -1 == index(keys(s:tabs), a:tab_id)
+    if -1 == index(keys(s:tabs), string(a:tab_id))
         return
     endif
 
-    call remove(s:tabs[a:tab_id], s:buffers[a:buf_id])
+"    call remove(s:tabs[a:tab_id], s:buffers[a:buf_id])
 endfunc
 
 func! amax#buf_enter()
@@ -216,7 +216,7 @@ func! amax#buf_select(id, result)
         return
     endif
 
-    let i = index(keys(s:buffers), keys(t:bufs)[a:result - 1])
+    let i = index(keys(s:buffers), keys(t:bufs)[string(a:result - 1]))
     
     if -1 == i
        echo "Buffer not found!
@@ -248,11 +248,8 @@ endfunc
 func! amax#tab_close()
     echomsg "Tab close"
 
-    echomsg index(keys(s:tabs), s:otab_id)
 
-    echomsg keys(s:tabs)
-
-    if -1 == index(keys(s:tabs),  s:otab_id)
+    if -1 == index(keys(s:tabs), string(s:otab_id))
         echomsg "Tab not found " . s:otab_id
 
         return
@@ -278,7 +275,7 @@ func! amax#choise_tab_list(id, result)
     endif
 
     let tab_id = keys(t:tabs)[a:result - 1]
-    let i = index(keys(s:tabs), tab_id)
+    let i = index(keys(s:tabs), string(tab_id))
 
     if -1 == i
         echomsg "The tab not found!"
