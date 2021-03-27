@@ -77,7 +77,7 @@ endfunc
 func! amax#buf_open(buf_id, filename, open_flag)
 "    echom "buf open ".a:buf_id
 
-    if -1 == index(keys(s:buffers), ''.a:buf_id)
+    if -1 == index(keys(s:buffers), string(a:buf_id))
         return
     endif
 
@@ -91,7 +91,7 @@ func! amax#buf_create(buf_id, filename, open_flag)
 "    echomsg "buf_create ".a:buf_id
 
 "   The buffer is already exist
-    if -1 != index(keys(s:buffers), ''.a:buf_id)
+    if -1 != index(keys(s:buffers), string(a:buf_id))
         return
     endif
 
@@ -113,7 +113,7 @@ endfunc
 func! amax#buf_close(buf_id)
 "    echomsg "buf_close ".a:buf_id
 
-     if -1 == index(keys(s:buffers), ''.a:buf_id)
+     if -1 == index(keys(s:buffers), string(a:buf_id))
         return
     endif
 
